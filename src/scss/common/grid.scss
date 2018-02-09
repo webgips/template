@@ -1,0 +1,25 @@
+[class*="container"] {
+  max-width: 1170px;
+  margin: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @include max-lg{
+    max-width: 960px;
+  }
+
+  @include max-md{
+    max-width: 720px;
+  }
+
+  @include max-sm{
+    max-width: 480px;
+  }
+
+  @include max-xs{
+    max-width: 320px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+}

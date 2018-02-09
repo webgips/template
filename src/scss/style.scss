@@ -1,0 +1,14 @@
+// Файлы сторонних библиотек
+// @import (less) '../libs/normalize/normalize.css';
+
+// Общие файлы стилей
+@import 'common/scaffolding';
+@import 'common/variables';
+@import 'common/font';
+@import 'common/mixin';
+@import 'common/grid';
+
+// Стилевые файлы БЭМ-блоков
+@import '../blocks/project/hero/hero.scss';
+@import '../blocks/project/footer/footer.scss';
+@import '../blocks/project/header/header.scss';
