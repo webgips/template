@@ -17,7 +17,7 @@ https://github.com/kizu/bemto
 
 * Есть глобальные файлы: стилевые, js, шрифты, картинки.
 
-* Диспетчер подключения стилей ./src/less/style.less генерируется автоматически при старте любой gulp-задачи.
+* Диспетчер подключения стилей ./src/scss/style.scss генерируется автоматически при старте любой gulp-задачи.
 
 
 БЛОКИ
@@ -33,15 +33,15 @@ src/blocks
     Используются только в данном проекте.
 
   Способ применения
-   - подключить нужный блок библиотеки в src/less/style.less, src/pug/connect/_ blocks.pug. ОБЯЗАТЕЛЬНО ПЕРЕД БЛОКАМИ ПРОЕКТА.
+   - подключить нужный блок библиотеки в src/scss/style.scss, src/pug/connect/_ blocks.pug. ОБЯЗАТЕЛЬНО ПЕРЕД БЛОКАМИ ПРОЕКТА.
    - Переопределить на уровне проекта (если требуется).
      Пример:
-      blocks/lib/btn/btn.less
+      blocks/lib/btn/btn.scss
       .btn {
         border: 1px solid grey;
       }
       
-      blocks/project/btn/btn.less
+      blocks/project/btn/btn.scss
       .btn {
         font-size: 14px;
       }
@@ -54,15 +54,15 @@ src/blocks
 
   Создание блоков проекта
     - Находясь в корне проекта $ node newBlock.js blockName 
-    - после чего в src/blocks/project будет создана дириктория с именем блока, в которой будут созданы 2 файла (blockName.pug, blockName.less) и автоматически подключены в src/less/style.less, src/pug/connect/_ blocks.pug.
+    - после чего в src/blocks/project будет создана дириктория с именем блока, в которой будут созданы 2 файла (blockName.pug, blockName.scss) и автоматически подключены в src/scss/style.scss, src/pug/connect/_ blocks.pug.
  
-    Каждый блок лежит в ./src/blocks/ в своей папке. Каждый блок — как минимум, папка и одноимённый less-файл.
+    Каждый блок лежит в ./src/blocks/ в своей папке. Каждый блок — как минимум, папка и одноимённый scss-файл.
 
     Возможное содержимое блока:
 
     demo-block/               # Папка блока
     img/                    # Изображения, используемые блоком и обрабатываемые автоматикой сборки
-    demo-block.less         # Стилевой файл блока
+    demo-block.scss         # Стилевой файл блока
     demo-block.js           # js-файл блока
     demo-block.pug          # Разметка блока 
     readme.md               # Какое-то пояснение
