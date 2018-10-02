@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.24.6",
+    "browser-sync": "^2.24.7",
     "del": "^3.0.0",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-autoprefixer": "^4.0.0",
@@ -40,10 +40,11 @@
     "gulp-svgmin": "^1.2.4",
     "gulp-uglify": "^3.0.0",
     "imagemin-jpeg-recompress": "^5.1.0",
+    "imagemin-mozjpeg": "^7.0.0",
     "imagemin-pngquant": "^6.0.0",
+    "imagemin-zopfli": "^5.1.0",
     "pug": "^2.0.3",
     "sass": "^1.7.3"
   },
-  "dependencies": {},
   "optionalDependencies": {}
 }

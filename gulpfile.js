@@ -10,6 +10,8 @@ const gulp   = require('gulp'),
         del = require('del'),
         imageminJpegRecompress = require('imagemin-jpeg-recompress'),
         imageminPngquant = require('imagemin-pngquant'),
+        imageminZopfli = require('imagemin-zopfli'),
+        imageminMozjpeg = require('imagemin-mozjpeg'),
         browserSync = require('browser-sync').create();
 
 gulp.task('browserSync', function() {
@@ -82,14 +84,35 @@ gulp.task('copy:image', function(){
         .pipe(gp.rename({dirname: ''}))
         .pipe(gulp.dest('build/img/'))
         .pipe(gp.imagemin([
+            //png
+            imageminPngquant({quality: '80'}),
+            imageminZopfli({
+                more: true
+                // iterations: 50 // very slow but more effective
+            }),
+            //gif
             gp.imagemin.gifsicle({interlaced: true}),
             imageminJpegRecompress({
                 progressive: true,
                 max: 80,
                 min: 70
             }),
-            imageminPngquant({quality: '80'}),
+           //svg
+            gp.imagemin.svgo({
+                plugins: [{
+                    removeViewBox: false
+                }]
+            }),
+            //jpg lossless
+            gp.imagemin.jpegtran({
+                progressive: true
+            }),
+            //jpg very light lossy, use vs jpegtran
+            imageminMozjpeg({
+                quality: 90
+            })
         ]))
+
         .pipe(gulp.dest('build/img/'));
 });
 
