@@ -121,13 +121,6 @@ gulp.task('copy:fonts', function(){
         .pipe(gp.newer('build/fonts/'))
         .pipe(gulp.dest('build/'))
 });
-
-// gulp.task('watch', ['browserSync', 'pug', 'sass', 'js', 'copy:image', 'copy:fonts', 'sprite:svg'], function(){
-//     gulp.watch('src/**/*.pug', ['pug']);
-//     gulp.watch('src/**/*.scss', ['sass']);
-//     gulp.watch(['src/img/**/*', 'src/blocks/project/**/*.+(png|jpg|gif|jpeg|svg)'], ['copy:image']);
-//     gulp.watch(['src/js/**/*.js', 'src/blocks/**/*.js'], ['js']);
-// });
 // Слежение за изменениями
 gulp.task('watch', function() {
     gulp.watch('src/**/*.pug', gulp.series('pug'));
